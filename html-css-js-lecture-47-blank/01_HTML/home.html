@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- ctrl + / -->
+<!-- HTML주석 -->
+<!-- HTML 문서의 버전 정보를 알리는 표시 -->
+<html lang="ko">
+  <!-- HTML문서의 시작을 알리는 부분 -->
+
+  <head>
+    <!-- HTML문서의 메타데이터를 정의 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 문서의 제목 -->
+    <title>HOME</title>
+    <!--
+      <link>, <script>, <style> ...
+      외부 파일(javascript,  css등)을 불러옴
+    -->
+  </head>
+
+  <!-- 실제 브라우저에서 데이터를 출력하는 부분 -->
+
+  <body>
+    <h1>Hello World!</h1>
+
+    <!--
+    * Web 경로
+      protocol host           port  path    queryString
+      https:// www.domain.com :8888 /login ?query=name
+      -url
+        origin : protocol + host + port
+        protocol : http, https
+        host : 사이트 도메인 (IP주소를 보기쉽게 문자열로 변경)
+        port : 포트 번호
+        path : 서버측의 사이트 내부 경로
+        query string : 요청의 key와 value값
+
+    * Directory 경로
+      HTML파일에서 경로는 파일 시스템 내의 위치를 지정한다.
+      웹 페이지에서 다른 파일이나 리소스를 참조하는데 사용.
+      경로 구분
+        - 상대경로 (Relative Path)
+        - 절대경로 (Absolute Path)
+      / 절대경로
+      ./ 현재경로
+      ../ 상위 경로
+    -->
+
+    <!-- a 특정 경로로 향하는 하이퍼링크를 작성하는 태그 -->
+    <a href="/01_HTML/01_text/text.html">웹 기준 절대 경로 (라이브서버)</a>
+    <a href="\01_HTML\01_text\text.html">웹 기준 절대 경로 (라이브서버)</a>
+    <a href="c:/workspace-47-seoul/html-css-js-lecture-47-blank/01_HTML/02_image/image.html">다람쥐 페이지(파일 시스템 기준 절대
+      경로)</a>
+    <a href="c:\workspace-47-seoul\html-css-js-lecture-47-blank\01_HTML\02_image\image.html">다람쥐 페이지(파일 시스템 기준 절대
+      경로)</a>
+    <a href="https://www.naver.com">네이버</a>
+
+    <!-- subRoute.html -->
+    <a href="./00_route/sub/subRoute.html">subRoute.html</a>
+    <!-- route.html -->
+    <a href="./00_route/route.html">route.html</a>
+
+    <!-- sameRoute.html -->
+    <a href="./00_route/sameRoute.html">sameRoute.html</a>
+
+    <!-- text.html -->
+    <a href="./01_text/text.html">text.html</a>
+
+    <!-- image.html -->
+    <a href="./02_image/image.html">image.html</a>
+
+    <iframe width="600" height="400" 
+    src="./00_route/route.html" 
+    frameborder="0"></iframe>
+  </body>
+
+</html>

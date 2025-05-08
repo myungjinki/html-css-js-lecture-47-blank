@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>route</title>
+  </head>
+
+  <body>
+    <h1>route</h1>
+    <!-- 
+      a태그
+      * href 속성 : 링크할 주소 (Web경로 또는 디렉토리 경로)
+
+      * target 속성
+        target="_self | _blank | _parent | _top | <프레임이름>" 교재 222p참고
+        _self (기본값) : 현재 창 (또는 프레임) 에서 링크를 연다
+        _blank : 새 창 (또는 새 탭) 에서 링크를 연다
+        _parent : 현재 프레임의 부모 프레임에서 링크를 연다.
+        _top : 모든 프레임을 벗어나 전체 창을 새로 로드
+        
+        # 앵커
+          링크가 가리키는 문서 내의 특정 위치를 가리키는 경우
+          <태그 id="앵커 이름"> contents </태그>
+          <a href="경로#앵커 이름"> 앵커로 이동하기 </a>
+    -->
+
+
+    <!-- 상대경로 -->
+    <!-- 1. 동일한 폴더 내의 파일 참조 -->
+    <a href="./sameRoute.html" target="_blank">sameRoute.html target="_blank"</a><br>
+    <!-- 2. 하위 폴더의 파일 참조 -->
+    <a href="./sub/subRoute.html" target="_parent">subRoute.html target="_parent"</a><br>
+    <!-- 3. 상위 폴더의 파일 참조 -->
+    <a href="../home.html" target="_top">home.html target="_top"</a><br>
+
+    <!-- 4. 페이지 내 특정 위치로 이동 -->
+    <a href="../02_image/image.html#anchor"> 앵커로 이동하기 </a>
+
+  </body>
+
+</html>
