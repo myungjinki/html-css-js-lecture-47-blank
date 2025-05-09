@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표를 만드는 태그</title>
+    <style>
+      td,
+      th {
+        width: 100px;
+        height: 100px;
+      }
+
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+    <table> : 표 전체를 감싸는 요소
+    <caption> : 표의 제목 또는 설명
+    <thead> : 표의 헤더 영역 (열 제목들을 그룹화)
+    <tbody> : 표의 본문 영역 (실제 데이터 행들)
+    <tfoot> : 표의 바닥 영역 (합계나 요약 등)
+    <tr> : 표의 한 행을 정의 table row
+    <th> : 열 제목 셀 table header cell
+    <td> : 일반 데이터 셀 table data
+    
+    중첩구조와 들여쓰기에 주의하자
+    -->
+
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>이름</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td>01</td>
+        <td>홍길동</td>
+        <td>010-9999-9999</td>
+      </tr>
+      <tr>
+        <td>02</td>
+        <td>이순신</td>
+        <td>010-1111-1111</td>
+      </tr>
+    </table>
+    table>tr>td*3
+
+    <!-- table>caption+tr>th*4^(tr>td*4)*2 -->
+    <table>
+      <caption>
+        전화번호부
+      </caption>
+      <tr>
+        <th colspan="2">이름</th>
+        <th>나이</th>
+        <th>전화번호</th>
+      </tr>
+      <tr>
+        <td rowspan="2">홍</td>
+        <td rowspan="2">길동</td>
+        <td rowspan="2">30</td>
+        <td>010-1234-5678</td>
+      </tr>
+      <tr>
+        <td>010-3456-7890</td>
+      </tr>
+    </table>
+    <hr />
+
+    <table>
+      <thead>
+        <tr>
+          <td colspan="4">1</td>
+        </tr>
+      </thead>
+      <tr>
+        <td colspan="2" rowspan="2">5</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td colspan="2">13</td>
+        <td colspan="2">15</td>
+      </tr>
+    </table>
+  </body>
+</html>

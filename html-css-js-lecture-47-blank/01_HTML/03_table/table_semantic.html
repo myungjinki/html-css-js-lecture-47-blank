@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>semantic_table</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+
+  <body>
+    <figure>
+      <figcaption>
+        <p>테이블 상단 캡션</p>
+      </figcaption>
+
+      <table>
+        <caption>
+          2025년 1분기 매출
+        </caption>
+        <thead>
+          <tr>
+            <th>월</th>
+            <th>매출</th>
+            <th>상태</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1월</td>
+            <td>10,000,000원</td>
+            <td>정상</td>
+          </tr>
+          <tr>
+            <td>2월</td>
+            <td>12,000,000원</td>
+            <td>정상</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>합계</td>
+            <td>22,000,000</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <figcaption>
+        <p>테이블 하단 캡션</p>
+      </figcaption>
+    </figure>
+  </body>
+</html>

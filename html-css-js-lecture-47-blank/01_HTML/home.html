@@ -7,8 +7,8 @@
 
   <head>
     <!-- HTML문서의 메타데이터를 정의 -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 문서의 제목 -->
     <title>HOME</title>
     <!--
@@ -45,17 +45,40 @@
       ../ 상위 경로
     -->
 
+    <ul>
+      <li>00_route</li>
+      <ul>
+        <li>sub</li>
+        <ul>
+          <li>
+            <a href="./00_route/sub/subRoute.html">subRoute.html</a>
+          </li>
+        </ul>
+        <li>route.html</li>
+        <li>sameRoute.html</li>
+      </ul>
+      <li>01_text</li>
+      <ul>
+        <li>list.html</li>
+        <li>text.html</li>
+      </ul>
+      <li>02_image</li>
+      <li>home.html</li>
+    </ul>
     <!-- a 특정 경로로 향하는 하이퍼링크를 작성하는 태그 -->
     <a href="/01_HTML/01_text/text.html">웹 기준 절대 경로 (라이브서버)</a>
     <a href="\01_HTML\01_text\text.html">웹 기준 절대 경로 (라이브서버)</a>
-    <a href="c:/workspace-47-seoul/html-css-js-lecture-47-blank/01_HTML/02_image/image.html">다람쥐 페이지(파일 시스템 기준 절대
-      경로)</a>
-    <a href="c:\workspace-47-seoul\html-css-js-lecture-47-blank\01_HTML\02_image\image.html">다람쥐 페이지(파일 시스템 기준 절대
-      경로)</a>
+    <a
+      href="c:/workspace-47-seoul/html-css-js-lecture-47-blank/01_HTML/02_image/image.html"
+      >다람쥐 페이지(파일 시스템 기준 절대 경로)</a
+    >
+    <a
+      href="c:\workspace-47-seoul\html-css-js-lecture-47-blank\01_HTML\02_image\image.html"
+      >다람쥐 페이지(파일 시스템 기준 절대 경로)</a
+    >
     <a href="https://www.naver.com">네이버</a>
 
     <!-- subRoute.html -->
-    <a href="./00_route/sub/subRoute.html">subRoute.html</a>
     <!-- route.html -->
     <a href="./00_route/route.html">route.html</a>
 
@@ -68,9 +91,11 @@
     <!-- image.html -->
     <a href="./02_image/image.html">image.html</a>
 
-    <iframe width="600" height="400" 
-    src="./00_route/route.html" 
-    frameborder="0"></iframe>
+    <iframe
+      width="600"
+      height="400"
+      src="./00_route/route.html"
+      frameborder="2"
+    ></iframe>
   </body>
-
 </html>

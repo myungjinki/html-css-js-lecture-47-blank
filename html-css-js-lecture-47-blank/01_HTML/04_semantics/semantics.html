@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>시맨틱 태그 예제</title>
+  </head>
+
+  <body>
+    <!--
+  시맨틱 태그의 중요성
+  1. 구조화(Structure)
+    콘텐츠에 명확한 계층과 구성을 부여
+  2. 의미 부여 (Semantics)
+    단순한 텍스트가 아닌 의미 있는 정보로 해석
+    사용자와 기계(브라우저, 검색엔진 등)가 모두 이해 가능
+  3. 접근성 (Accessibility)
+    스크린 리더 등 보조기기 사용자를 위한 구조 제공
+    시각 장애인도 콘텐츠를 정확히 인식할 수 있음
+  4. 유지보수/협업 (Maintainability)
+    명확한 구조를 코드 가독성 향상
+    빠른 이해와 수정이 가능하다
+  5. 검색엔진 최적화 (SEO)
+    의미있는 구조는 곧 검색엔진이 문서를 분석하기 쉬워짐(페이지 노출 증가)
+  -->
+    <!-- 문서나 섹션의 헤더 / 사이트 로고, 메뉴 -->
+    <header>
+      <h1>내 블로그</h1>
+      <!-- 탐색 링크 그룹 / 메뉴 바 목차 -->
+      <nav>
+        <ul>
+          <li><a href="#home">홈</a></li>
+          <li><a href="#about">소개</a></li>
+          <li><a href="#contact">연락처</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 문서의 핵심 콘텐츠 / 페이지당 1회만 사용 권장 -->
+    <main>
+      <!-- 독립된 콘텐츠 블록(의미론적 그룹화) / 제목태그 포함 권장 -->
+      <section>
+        <h2>최신 게시글</h2>
+        <!-- 독립적으로 배포 가능한 콘텐츠 -->
+        <article>
+          <h3>첫 번째 글</h3>
+          <p>이 글은 시맨틱 태그를 활용한 예제 입니다.</p>
+          <details>
+            <summary>더 많은 정보</summary>
+            <p>여기에는 숨겨진 정보가 들어 있습니다.</p>
+          </details>
+        </article>
+        <article>
+          <h3>두 번째 글</h3>
+          <p>이 글은 시맨틱 태그를 활용한 예제2 입니다.</p>
+          <details>
+            <summary>더 많은 정보2</summary>
+            <p>여기에는 숨겨진 정보2가 들어 있습니다.</p>
+          </details>
+        </article>
+      </section>
+      <!-- 보조 정보 영역 / 본문과 분리된 정보 -->
+      <aside>
+        <h3>관련 링크</h3>
+        <ul>
+          <li><a href="#">추천 글</a></li>
+          <li><a href="#">추천 글</a></li>
+        </ul>
+      </aside>
+    </main>
+    <!-- 문서나 섹션의 푸터 종료부 -->
+    <footer>
+      <p>
+        &copy; 2025
+        내&amp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;블로그. 모든 권리
+        보유.
+      </p>
+    </footer>
+    <!-- 이스케이프 시퀀스
+      주요 특수 문자
+      공백 : &nbsp;
+      앰퍼샌드 : &amp;
+      큰따옴표 : &quot;
+      작은 따옴표: &apos;
+    -->
+  </body>
+</html>
