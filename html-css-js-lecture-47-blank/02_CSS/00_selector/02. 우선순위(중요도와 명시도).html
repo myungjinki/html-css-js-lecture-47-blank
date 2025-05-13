@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS적용 우선순위</title>
+    <style>
+      /*
+        * CSS 적용 우선순위 204p (중요도, 명시도_적용범위, 소스순서)
+
+        [중요도]
+        1. 사용자 스타일 시트
+          (e.g. 확장을 통한 다크모드, 광고영역 가리기, 개발자도구를 통한 임시 수정)
+        2. !important
+          우선순위를 무시하고 해당 스타일을 강제 적용
+        3. 웹 페이지에서 제공자가 만든 스타일 시트
+        4. 브라우저가 제공하는 기본 스타일(default값)
+
+        [명시도] (범위 좁을수록 순위가 높다)
+        1. 인라인 스타일
+        2. id에 적용하는 스타일
+        3. 클래스에 적용하는 스타일
+        4. 태그에 적용하는 스타일
+
+        [통합]
+        1. !important
+        2. 인라인_1000pt
+        3. 아이디 선택자 ( # )_100pt
+        4. 클래스 선택자 ( . ) 또는 가상 클래스 선택자_10pt
+        5. 태그 선택자_1pt
+      
+        상속받은 스타일보다 명시적으로 적용한 스타일을 우선한다.
+      */
+
+      body {
+        color: blueviolet;
+        font-size: 30px;
+      }
+
+      h1 {
+        color: red;
+        /* font-size: inherit; */
+        /* !important는 속성 값 뒤에 붙이며,
+          해당 규칙이 다른 모든 규칙보다 우선 적용 */
+      }
+
+      .text {
+        color: blue;
+      }
+
+      #text {
+        color: green;
+      }
+
+      .red {
+        color: red;
+        font-weight: normal;
+      }
+
+      .bold {
+        color: blue;
+        font-weight: bold;
+      }
+
+      /*
+      직접 명시된 브라우저 기본 스타일과
+      명시된 것은 아니나 기본으로 나타나는 스타일
+      
+      보통은 상속값이 우선적용 되는 것이 맞음,
+      그러나 직접 명시된 경우의 브라우저 기본 스타일은 상속이 덮지 못한다.
+      강제로 덮도록 하는 경우 속성값에 inherit 속성을 부여
+      */
+    </style>
+  </head>
+
+  <body>
+    <h1>CSS 적용 우선순위 - 태그</h1>
+    <h1 class="text">CSS 적용 우선순위 - 클래스</h1>
+    <h1 id="text" class="text">CSS 적용 우선순위 - 아이디</h1>
+    <h1 style="color: yellow">CSS 적용 우선순위 - 인라인</h1>
+    <h1>CSS적용 우선순위 - !important</h1>
+
+    <!-- HTML요소의 여는태그 안 클래스 순서 (class="a b") 는
+      스타일 우선순위에 영향 X -->
+    <p class="bold red">
+      중복 속성이 있는 경우는 선택자 우선순위가 높은 쪽을 우선하며, 우선순위가
+      같다면 CSS소스 기준 더 뒤에 작성한 속성값이 적용된다.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 관련 서식</title>
+    <!-- 웹 폰트를 참조하는 태그 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&family=Share+Tech&display=swap"
+      rel="stylesheet">
+    <style>
+      .share-tech-regular {
+        font-family: "Share Tech", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      /*
+      기본형기호 222p
+      * 텍스트 관련 서식 종류
+      font-style : 문자 스타일 (normal | italic | ...)
+      font-variant : 소문자를 작은대문자로 표현하기
+      font-weight : 글자의 두께 100~900, bold(700)
+        , bolder, lighter, normal(400) ..
+      font-size : 텍스트의 크기
+      font-family : 글꼴을 지정
+
+      폰트 단축 속성 : 순서와 필수항목에 주의, 각 항목은 공백으로 구분,
+        백업폰트 지정시 콤마로 연결
+      font : <font-style><font-variant><font-weight><font-size/line-height><font-family>
+        1. 필수항목 : <font-size><font-family> (빠지면 CSS가 무효처리됨!)
+        2. line-height는 /를 붙여야 적용됨
+
+    */
+      .custom {
+        /* font-style: italic;
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: cursive; */
+        font: italic small-caps bold 30px/4 cursive;
+      }
+
+      /*
+        color : 글자 색 지정
+        텍스트의 줄 표시 / 제거
+        text-decoration : none | underline | overline | line-through
+        대소문자 변환
+        text-transform : none | capitalize | uppercase | lowercase | ..
+        텍스트 그림자 효과
+        text-shadow : none | <가로거리><세로거리><번짐 정도><색상>
+      */
+      .blue-shadow-text {
+        color: darkblue;
+        text-decoration: line-through;
+        text-transform: uppercase;
+        text-shadow: 16px 14px 3px blue;
+      }
+
+      /* 
+        * 공백 및 자간
+          white-space :
+            normal(공백 1 개행무시 줄바꿈 O)
+            | nowrap(공백 1 개행무시 줄바꿈 X)
+            | pre (공백유지 개행유지 줄바꿈 X)
+            | pre-line(공백 1 개행유지 줄바꿈 O)
+            | pre-wrap(공백유지 개행유지 줄바꿈 O)
+
+          letter-spacing : normal | <크기>
+          word-spacing : normal | <크기>
+      */
+      .white-space-test {
+        white-space: nowrap;
+        letter-spacing: normal;
+        word-spacing: normal;
+        /* font: 30px "Share Tech"; */
+        font-family: "Share Tech";
+      }
+
+      /* 
+        문단 관련 속성
+        text-align : start | end | left | right | center | justify | ..
+          텍스트 또는 인라인 요소의 정렬 지정.  일부 블록요소에는 동작하지 않는다.
+        text-justify : auto | none | inter-word | distribute
+          text-align의 속성값이 justify일 때만 적용됨
+        text-indent : <크기> | <백분율>
+          단락(문단, p태그)의 첫 글자 앞의 들여쓰기를 조절
+          백분율로 지정하는 경우 부모요소의 너비를 기준으로 한 상대값
+        line-height : normal | <숫자> | <크기> | <백분율>
+          숫자로 설정하는 경우 글자크기의 n배로 계산
+      */
+      .paragraph-style {
+        text-align: justify;
+        text-justify: auto;
+        text-indent: 5%;
+        line-height: 2;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="custom">AppleBanana텍스트 아무거나 입력해 주세요</p>
+    <p class="blue-shadow-text">BlueShadowText</p>
+    <p class="white-space-test">
+      Lorem ipsum dolor sit, amet consectetur adipisicing
+
+      elit. Debitis perspiciatis dolor harum, animi consequatur
+      eligendi? Quis voluptate nemo a pariatur expedita
+      d
+
+      eserunt consec
+
+      tetur corporis porro architecto, corrupti magni.
+      Ducimus, aspernatur?
+    </p>
+    <p class="paragraph-style share-tech-regular">Lorem ipsum, dolor sit amet consectetur
+      adipisicing elit. Voluptatibus corporis
+      perspiciatis odit molestias doloremque sit, dolorum earum
+      in <span>corrupti incidunt natus tempora labore eaque ea unde
+        id voluptatem </span>rerum sequi?</p>
+  </body>
+
+</html>
