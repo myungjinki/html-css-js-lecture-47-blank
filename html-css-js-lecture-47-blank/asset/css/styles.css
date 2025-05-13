@@ -1,20 +1,15 @@
-h1 {
+[title] {
   color: green;
 }
-
-section {
-  background-color: #fafafa;
-}
-
 p {
   color: blue;
 }
 
-#intro p {
-  color: red;
+.description ~ section {
+  background-color: #fafafa;
 }
 
-.task-list li {
+ul > li {
   font-weight: bold;
 }
 
@@ -29,10 +24,15 @@ p {
 #unique-item {
   font-size: 20px;
 }
-div p:nth-child(odd)::before {
-  content: '✅ ';
+
+#intro p {
+  color: red;
 }
 
 #advanced > p {
   color: red;
+}
+
+div p:nth-child(odd)::before {
+  content: '✅ ';
 }
