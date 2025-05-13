@@ -1,0 +1,38 @@
+h1 {
+  color: green;
+}
+
+section {
+  background-color: lightgrey;
+}
+
+p {
+  color: blue;
+}
+
+#intro p {
+  color: red;
+}
+
+.task-list li {
+  font-weight: bold;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+.highlight:hover {
+  background-color: orange;
+}
+
+#unique-item {
+  font-size: 20px;
+}
+div p:nth-child(odd)::before {
+  content: '✅ ';
+}
+
+#advanced > p {
+  color: red;
+}
