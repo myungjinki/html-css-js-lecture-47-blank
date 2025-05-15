@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background</title>
+    <style>
+      .example {
+        width: 500px;
+        height: 300px;
+        margin: 10px;
+        border: 1px solid gray;
+        background-color: #fff;
+      }
+
+      /*
+      배경색과 배경 이미지
+      - background-color
+        색상 (hex, rgb, rgba, 키워드 등) 배경의 색상 지정
+      - background-image : 이미지 또는 그라디언트
+        url('경로') | none | linear-gradient() | radial-gradient()
+      - background-position : 이미지의 위치지정
+        left | right | top | bottom | center | <수평위치><수직위치>
+      - background-size : 이미지 크기 조절
+        auto | contain | cover | <폭><높이>
+      - background-repeat : 이미지 반복 방식
+        repeat | no-repeat | ...
+      - background-attachment : 배경의 스크롤 방식
+        scroll | fixed | ...
+
+      - background (단축 속성)
+        위 속성들은 축약해 한 줄로 표현
+        *주의! : <position>/<size> 는 슬래시로 구분해야 한다!
+          나머지 속성은 순서에 관계 없다.
+        기본적으로 color 혹은 그를 대체하는 속성 하나만 있어도 적용된다.
+
+      - background-blend-mode : 이미지/색상 혼합 방식
+        배경 레이어가 겹쳐 있을 때 혼합 방식을 설정
+        배경 이미지를 수정하지 않고 다양한 비주얼 연출
+        빠른 시각적 변화, 테마 전환시 유용
+        normal | multiply | overlay | darken | lighten | color-dodge | ...
+    */
+
+      .url-img {
+        background-image: url('../../asset/img/numpad-hundred.png');
+      }
+
+      .repeat {
+        background-repeat: repeat;
+      }
+
+      .no-repeat {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 50% 50%;
+      }
+
+      body {
+        /* background-image: url('../../asset/img/image.png');
+        background-size: 300px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-attachment: fixed; */
+        background: url('../../asset/img/image.png') bottom/300px no-repeat
+          fixed;
+      }
+
+      .multi-layer {
+        /* 배경 속성은 컴마를 이용해 레이어를 쌓을 수 있다. */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), red),
+          url('../../asset/img/aaa.jpg') no-repeat center/cover;
+        background-blend-mode: overlay;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="example multi-layer"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+    <div class="example url-img repeat"></div>
+    <div class="example url-img no-repeat"></div>
+  </body>
+</html>

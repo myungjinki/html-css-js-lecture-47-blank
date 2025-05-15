@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <style>
+      /* border-radius : 테두리를 둥글게 처리
+      시계방향으로 속성값 적용 (숫자와 단위)
+      좌측상단 우측상단 우측하단 좌측하단
+    */
+      div {
+        border: 2px solid black;
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+      }
+
+      .box1 {
+        border-radius: 20px;
+      }
+
+      .box2{
+        border-radius: 10%;
+      }
+
+      .box3{
+        border-radius: 5px 10px 20px 30px;
+      }
+
+      .box4{
+        border-radius: 10px 30px;
+      }
+
+      .box5{
+        border-radius: 100px 100px 100px 0;
+      }
+
+      /*
+        요소에 그림자 효과
+        box-shadow : none | <그림자 값>
+        <그림자 값> = <수평거리><수직거리><흐림정도><번짐정도><색상> inset
+        - 필수 값 : 수평거리와 수직거리
+        - 색상과 inset의 작성 위치는 앞, 뒤 관계없음
+        - 나머지 네 숫자값은 순서를 지켜 하나의 묶음으로 작성할 것
+        - 대부분의 단위(길이 단위)를 사용 가능하나 %는 사용 불가
+      */
+      .box-shadow{
+        box-shadow: red 1em 9px 9px 5px ;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box1 box-shadow"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+  </body>
+
+</html>

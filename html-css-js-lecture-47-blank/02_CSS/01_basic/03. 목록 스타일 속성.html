@@ -23,6 +23,63 @@
         /* list-style-image: url("../../asset/img/blank_heart.svg"); */
         /* list-style-image: linear-gradient(to left bottom, red, blue); */
       }
+
+      /* 가상클래스와 가상요소 437p */
+      /* 가상클래스 : 콜론 한 개
+        요소의 '상태'나 '위치'를 스타일링
+        :hover :focus :nth-child() :not()
+        */
+      /* 가상요소 : 콜론 두 개
+        HTML요소의 가상의 '부분'을 스타일링
+        ::before ::after
+        */
+
+      /* hover - 마우스 오버 시 스타일 적용 */
+      li:hover {
+        font-style: italic;
+      }
+
+      /* nth-child - n번째 항목에만 스타일 적용 */
+      /* nth-child( <수학식> | odd(홀수) | even(짝수) | .. ) */
+      li:nth-child(even) {
+        background-color: rgb(179, 180, 180);
+      }
+
+      .menu {
+        list-style-type: none;
+      }
+
+      /*
+        ::after ::before
+        * 가상요소(pseudo-element)
+          - 가상 요소는 실제 DOM구조에 영향을 주지 않고,
+            스타일링과 레이아웃을 조작
+          - 텍스트, 이미지, 속성을 삽입할 수 있음
+      */
+      .menu li::before {
+        content: '▶️';
+      }
+
+      .menu li::after {
+        content: ': 모든 메뉴의 뒤에 붙일 문자열';
+      }
+
+      .menu li:hover::after {
+        content: '🐀';
+      }
+
+      a::after {
+        content: '(' attr(href) ')';
+      }
+
+      .dead-link {
+        text-decoration: line-through;
+      }
+
+      .dead-link::after {
+        content: '❌';
+        /* content: url('../../asset/img/blank_heart.svg'); */
+      }
     </style>
   </head>
 
@@ -34,5 +91,28 @@
       <li>3번째 항목</li>
       <li>4번째 항목</li>
     </ol>
+
+    <!-- ul.menu>(li{Menu-$})*5 -->
+    <ul class="menu">
+      <li>Menu-1</li>
+      <li>Menu-2</li>
+      <li>Menu-3</li>
+      <li>Menu-4</li>
+      <li>Menu-5</li>
+    </ul>
+
+    <p>
+      네이버는 대한민국의 검색 포털사이트 입니다.
+      <a href="https://www.naver.com"
+        >링크를 통해 네이버로 이동할 수 있습니다.</a
+      >
+    </p>
+    <p>
+      설명에 대한 링크가 더 이상 존재하지 않는 링크일 때 이러한 스타일이 적용된
+      클래스를 부여하여 시각적으로 링크의 비활성 상태를 전달할 수 있습니다.
+      <a href="http://localhost:3000/" class="dead-link">
+        이 링크는 더이상 유효하지 않습니다.</a
+      >
+    </p>
   </body>
 </html>

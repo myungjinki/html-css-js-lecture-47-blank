@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ko">
-
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>텍스트 관련 서식</title>
     <!-- 웹 폰트를 참조하는 태그 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&family=Share+Tech&display=swap"
-      rel="stylesheet">
+      rel="stylesheet"
+    />
     <style>
       .share-tech-regular {
-        font-family: "Share Tech", sans-serif;
+        font-family: 'Share Tech', sans-serif;
         font-weight: 400;
         font-style: normal;
       }
@@ -65,7 +65,7 @@
           white-space :
             normal(공백 1 개행무시 줄바꿈 O)
             | nowrap(공백 1 개행무시 줄바꿈 X)
-            | pre (공백유지 개행유지 줄바꿈 X)
+            | pre (공백유지 개행유지 줄바꿈 X) pre태그와 표시방식이 같음
             | pre-line(공백 1 개행유지 줄바꿈 O)
             | pre-wrap(공백유지 개행유지 줄바꿈 O)
 
@@ -77,15 +77,13 @@
         letter-spacing: normal;
         word-spacing: normal;
         /* font: 30px "Share Tech"; */
-        font-family: "Share Tech";
+        font-family: 'Share Tech';
       }
 
       /* 
         문단 관련 속성
         text-align : start | end | left | right | center | justify | ..
           텍스트 또는 인라인 요소의 정렬 지정.  일부 블록요소에는 동작하지 않는다.
-        text-justify : auto | none | inter-word | distribute
-          text-align의 속성값이 justify일 때만 적용됨
         text-indent : <크기> | <백분율>
           단락(문단, p태그)의 첫 글자 앞의 들여쓰기를 조절
           백분율로 지정하는 경우 부모요소의 너비를 기준으로 한 상대값
@@ -105,22 +103,17 @@
     <p class="custom">AppleBanana텍스트 아무거나 입력해 주세요</p>
     <p class="blue-shadow-text">BlueShadowText</p>
     <p class="white-space-test">
-      Lorem ipsum dolor sit, amet consectetur adipisicing
-
-      elit. Debitis perspiciatis dolor harum, animi consequatur
-      eligendi? Quis voluptate nemo a pariatur expedita
-      d
-
-      eserunt consec
-
-      tetur corporis porro architecto, corrupti magni.
-      Ducimus, aspernatur?
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis
+      perspiciatis dolor harum, animi consequatur eligendi? Quis voluptate nemo
+      a pariatur expedita d eserunt consec tetur corporis porro architecto,
+      corrupti magni. Ducimus, aspernatur?
     </p>
-    <p class="paragraph-style share-tech-regular">Lorem ipsum, dolor sit amet consectetur
-      adipisicing elit. Voluptatibus corporis
-      perspiciatis odit molestias doloremque sit, dolorum earum
-      in <span>corrupti incidunt natus tempora labore eaque ea unde
-        id voluptatem </span>rerum sequi?</p>
+    <p class="paragraph-style share-tech-regular">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus
+      corporis perspiciatis odit molestias doloremque sit, dolorum earum in
+      <span
+        >corrupti incidunt natus tempora labore eaque ea unde id voluptatem </span
+      >rerum sequi?
+    </p>
   </body>
-
 </html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+      .container {
+        border: 5px solid red;
+        width: 600px;
+      }
+
+      .top {
+        background-color: purple;
+        height: 50px;
+      }
+
+      .left {
+        background-color: lightblue;
+        float: left;
+        width: 400px;
+        height: 100px;
+      }
+
+      .right {
+        background-color: yellow;
+        float: right;
+        width: 200px;
+        height: 100px;
+      }
+
+      .clear {
+        background-color: green;
+        height: 50px;
+        clear: both;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="top">제일 위에 배치할 요소</div>
+      <div class="left">왼쪽으로 부유시킬 요소</div>
+      <div class="right">오른쪽으로 부유시킬 요소</div>
+      <div class="clear">float:clear이 요소는 두 부유된 요소 아래로 내려갑니다</div>
+    </div>
+  </body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        border: 1px solid red;
+      }
+
+      /* position : relative | absolute | fixed | sticky */
+
+      /* relative : 원래 위치에서 이동하기 */
+      .container {
+        position: relative;
+        bottom: 20px;
+        left: 30px;
+        width: 300px;
+        height: 300px;
+        background-color: lightgrey;
+      }
+
+      /* absolute : 기준이 되는 조상요소 기준으로 배치하기 */
+      .absolute {
+        /* absolute 사용시 기준이 되는 조상을 확인해야 한다.
+          상위 요소에 relative를 설정함으로써 기준으로 설정할 수 있음 */
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        background-color: lightcoral;
+      }
+
+      /* fixed로 화면에 고정하기 */
+      .fixed {
+        /* 무조건 화면상의 위치를 기준으로 한다. 부모요소와 관계 없다. */
+        position: fixed;
+        width: 100px;
+        height: 100px;
+        bottom: 30px;
+        right: 30px;
+        background-color: lightblue;
+      }
+
+      /* sticky로 스크롤 시 고정 */
+      .sticky{
+        position: sticky;
+        height: 50px;
+        top: 0px;
+        text-align: center;
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="absolute">Absolute Position</div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <div class="fixed">Fixed position</div>
+    <div class="sticky">Sticky position</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus tempore praesentium autem repudiandae ipsam
+      ullam provident? Dolor perferendis dicta nulla. Fuga modi officiis sit veniam et quas quam earum excepturi.
+    </p>
+  </body>
+
+</html>

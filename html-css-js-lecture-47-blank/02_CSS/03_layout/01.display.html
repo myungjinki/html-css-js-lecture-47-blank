@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display속성</title>
+    <style>
+      /*
+      * display : inline | block | inline-block | ...
+
+      * 인라인 요소 : 한 줄에 나란히 표시되며, 크기 조정이 불가능
+        - 한 줄에 여러개의 요소를 배치
+        - 기본 너비값이 컨텐츠의 너비와 같다.
+        span, a, q, b, strong, input ...
+
+      * 블록 요소 : 새로운 줄에 표시되고, 크기 조정이 가능
+        - 한 줄에 한 개의 요소를 배치
+        - 기본 너비값이 100% 값을 갖는다
+        - 크기값을 가질 수 있다.
+        div, table, p, ul, ol, li ...
+
+      * 
+    */
+      .block {
+        display: block;
+        background-color: lightcoral;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .inline {
+        /* div를 강제로 인라인 요소의 특성으로 동작하게 함 */
+        display: inline;
+        background-color: lightblue;
+        /* width와 height가 적용되지 않음 */
+        width: 100px;
+        height: 100px;
+        /* 좌우 마진 패딩 적용가능 (상하 적용 안됨)*/
+        margin: 10px;
+        padding: 10px;
+        /* (인라인 요소의)높이를 조정하고 싶을때 대체할 수 있는 방법 */
+        line-height: 100px;
+      }
+
+      /* 인라인 블록 요소 */
+      .inline-block {
+        display: inline-block;
+        background-color: lightgreen;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 블록 요소 -->
+    <div class="block">블록 요소</div>
+
+    <!-- 인라인 요소 -->
+    <div class="inline">인라인 요소</div>
+    <div class="inline">인라인 요소2</div>
+
+    <br>
+    <!-- 인라인 블록 요소 -->
+    <div class="inline-block">인라인 블록 요소1</div>
+    <div class="inline-block">인라인 블록 요소2</div>
+
+    <br>
+    <span class="inline-block">인라인블록 span1</span>
+    <span class="inline-block">인라인블록 span2</span>
+  </body>
+
+</html>
