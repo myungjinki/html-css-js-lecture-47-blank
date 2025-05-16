@@ -6,14 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-      nav{
+      * {
+        box-sizing: border-box;
+      }
+
+      nav {
         background-color: pink;
         width: 700px;
         height: 50px;
         margin: 0 auto;
       }
 
+      /* 
+        리스트 아이템에 불릿이 없다 ul list-style-type
+        글자 색이 다르다 color a
+        글자에 밑줄이 없다 text-decoration a
+        수평으로 배치해야 한다 float li
+        글자는 리스트 아이템 요소 내에서 가운데 정렬 되어있어야 한다 li text-align: center;
+        리스트 아이템 하나하나의 사이즈를 조절해야 한다 display
+          높이는 nav의 높이 line-height
+          폭은 다섯개가 5개를 균등하게 nav를 꽉 채우도록 width: 20%;
+        마우스를 올렸을 때 글자색과 배경색이 변한다 background-color :hover
+          변하는 배경색의 부분이 화면상에서 자연스럽게 꽉 채워져야 한다
+      */
 
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        /* border: 1px solid black; */
+        float: left;
+        width: 20%;
+        text-align: center;
+        line-height: 50px;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+        display: block;
+      }
+
+      a:hover{
+        color: lightblue;
+        background-color: lightcoral;
+      }
     </style>
   </head>
 

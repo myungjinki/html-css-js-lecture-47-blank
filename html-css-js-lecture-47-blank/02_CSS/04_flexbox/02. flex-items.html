@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox-items</title>
+    <style>
+      /* 플렉스 컨테이너 스타일 */
+      .flex-container {
+        display: flex;
+        background-color: gray;
+      }
+
+      /* 플렉스 아이템 스타일 */
+      .flex-container>div {
+        background-color: lightcoral;
+        color: white;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Flexbox items 속성들</h1>
+    <h3>order속성</h3>
+    <p>아이템의 정렬 순서 설정 (숫자로 부여)</p>
+    <div class="flex-container">
+      <div style="order: 3;">1</div>
+      <div style="order: 2;">2</div>
+      <div style="order: 4;">3</div>
+      <div style="order: 1;">4</div>
+    </div>
+    <hr>
+    <h3>flex-grow 속성</h3>
+    <p>남는 공간을 나누는 비율 (숫자로 부여)</p>
+    <div class="flex-container">
+      <div class="" style="flex-grow: 1;">1</div>
+      <div class="" style="flex-grow: 1;">2</div>
+      <div class="" style="flex-grow: 2;">3</div>
+    </div>
+    <hr>
+    <h3>flex-shrink 속성</h3>
+    <p>컨테이너 공간이 부족할 때 아이템이 줄어드는 정도
+      기본값은 1이며, 0으로 설정하면 줄어들지 않는다.
+      1보다 큰 수를 설정하면 1로 설정한 아이템보다 극명하게 줄어든다.
+    </p>
+    <div class="flex-container">
+      <div>1</div>
+      <div class="" style="flex-shrink: 0;">2</div>
+      <div>3</div>
+      <div>4</div>
+      <div style="flex-shrink: 2;">5</div>
+      <div>6</div>
+      <div>7</div>
+    </div>
+    <hr>
+    <h3>flex-basis 속성</h3>
+    <p>아이템의 기본크기 설정
+      width와 flex-basis모두 요소의 너비를 설정하는 속성이지만
+      flex-basis는 플렉스 컨테이너 안에서만 동작한다.
+      요소의 크기가 변동되지 전의 기준값 역할을 한다.
+      <br>
+      플렉스 레이아웃 내에서는 flex-basis가 width보다 우선순위가 높다.
+    </p>
+    <div class="flex-container">
+      <div>1</div>
+      <div class="" style="flex-basis:200px; width:300px;">2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+    <hr>
+    <h3>align-self 속성</h3>
+    <p>형제요소와의 배치를 정렬</p>
+  </body>
+
+</html>

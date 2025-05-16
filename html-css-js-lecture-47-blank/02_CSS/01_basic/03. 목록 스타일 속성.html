@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>목록 스타일 속성</title>
     <style>
       /* 목록 스타일 속성 :
@@ -45,6 +46,7 @@
         background-color: rgb(179, 180, 180);
       }
 
+
       .menu {
         list-style-type: none;
       }
@@ -57,27 +59,27 @@
           - 텍스트, 이미지, 속성을 삽입할 수 있음
       */
       .menu li::before {
-        content: '▶️';
+        content: "▶️";
       }
 
       .menu li::after {
-        content: ': 모든 메뉴의 뒤에 붙일 문자열';
+        content: ": 모든 메뉴의 뒤에 붙일 문자열";
       }
 
-      .menu li:hover::after {
-        content: '🐀';
+      .menu li:hover::after{
+        content: "🐀";
       }
 
-      a::after {
-        content: '(' attr(href) ')';
+      a::after{
+        content: '('attr(href)')';
       }
 
-      .dead-link {
+      .dead-link{
         text-decoration: line-through;
       }
 
-      .dead-link::after {
-        content: '❌';
+      .dead-link::after{
+        content: "❌";
         /* content: url('../../asset/img/blank_heart.svg'); */
       }
     </style>
@@ -103,16 +105,14 @@
 
     <p>
       네이버는 대한민국의 검색 포털사이트 입니다.
-      <a href="https://www.naver.com"
-        >링크를 통해 네이버로 이동할 수 있습니다.</a
-      >
+      <a href="https://www.naver.com">링크를 통해 네이버로 이동할 수 있습니다.</a>
     </p>
     <p>
       설명에 대한 링크가 더 이상 존재하지 않는 링크일 때 이러한 스타일이 적용된
       클래스를 부여하여 시각적으로 링크의 비활성 상태를 전달할 수 있습니다.
       <a href="http://localhost:3000/" class="dead-link">
-        이 링크는 더이상 유효하지 않습니다.</a
-      >
+        이 링크는 더이상 유효하지 않습니다.</a>
     </p>
   </body>
+
 </html>

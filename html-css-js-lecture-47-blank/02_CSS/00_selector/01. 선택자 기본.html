@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
+
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>선택자 기본</title>
     <style>
       /* 전체 선택자 : 페이지에 있는 모든 요소에 스타일 적용 */
@@ -40,21 +41,21 @@
       /* 자식 선택자 (A > B)
         A의 자식인 B만 선택
       */
-      div > p {
+      div>p {
         text-decoration: underline;
       }
 
       /* 인접 형제 선택자 (A + B)
         A 바로 뒤에 나오는 B
       */
-      h2 + p {
+      h2+p {
         color: red;
       }
 
       /* 일반 형제 선택자 (A ~ B)
         A 이후에 나오는 모든 B
       */
-      h2 ~ p {
+      h2~p {
         font-style: italic;
       }
 
@@ -65,7 +66,7 @@
       }
 
       /* 속성 선택자 [속성 = "값"] */
-      [name='text'] {
+      [name="text"] {
         border: 2px solid blue;
       }
 
@@ -77,10 +78,8 @@
 
   <body>
     <h1 id="mainTitle">CSS 선택자 연습</h1>
-    <p>
-      <span class="highlight">이 문자열은 강조되었습니다. </span> 이 문자열은
-      강조되지 않았습니다.
-    </p>
+    <p><span class="highlight">이 문자열은 강조되었습니다. </span>
+      이 문자열은 강조되지 않았습니다.</p>
 
     <div class="parent">
       <p class="child">div의 자식 p요소 이 부분은 취소선이 그어집니다.</p>
@@ -90,15 +89,18 @@
       </section>
     </div>
 
+
     <h2>제목 2</h2>
     <p>이 문장은 h2의 바로 뒤에 나오는 인접 형제 단락 입니다.</p>
     <p>이 문장은 h2의 이후에 나오는 일반 형제 단락 입니다.</p>
 
     <form action="">
       <label for="text">텍스트 입력란</label>
-      <input type="text" name="text" id="text" /><br />
+      <input type="text" name="text" id="text"><br>
       <label for="password">패스워드 입력란</label>
-      <input type="password" name="password" id="password" required /><br />
+      <input type="password" name="password" id="password" required><br>
+
     </form>
   </body>
+
 </html>

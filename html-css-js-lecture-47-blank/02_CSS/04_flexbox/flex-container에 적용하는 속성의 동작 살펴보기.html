@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex 컨테이너 속성 연습</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* 기본 스타일 */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Flex 컨테이너 */
+    .container {
+      display: flex;
+      width: 80%;
+      height: 200px;
+      background-color: #f4f4f4;
+      border: 1px solid #ccc;
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* Flex 아이템 */
+    .item {
+      width: 50px;
+      /* height: 50px; */
+      background-color: #007BFF;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      font-size: 18px;
+    }
+
+    /* 컨트롤 영역 */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    label,
+    select {
+      font-size: 16px;
+      margin: 5px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </section>
+
+  <div class="controls">
+    <label for="flex-direction">Flex Direction:</label>
+    <select id="flex-direction">
+      <option value="row">row</option>
+      <option value="row-reverse">row-reverse</option>
+      <option value="column">column</option>
+      <option value="column-reverse">column-reverse</option>
+    </select>
+
+    <label for="justify-content">Justify Content:</label>
+    <select id="justify-content">
+      <option value="flex-start">flex-start</option>
+      <option value="center">center</option>
+      <option value="flex-end">flex-end</option>
+      <option value="space-between">space-between</option>
+      <option value="space-around">space-around</option>
+      <option value="space-evenly">space-evenly</option>
+    </select>
+
+    <label for="align-items">Align Items:</label>
+    <select id="align-items">
+      <option value="flex-start">flex-start</option>
+      <option value="center">center</option>
+      <option value="flex-end">flex-end</option>
+      <option value="stretch">stretch</option>
+    </select>
+  </div>
+
+  <script src="script.js"></script>
+  <script>// 컨트롤 요소 가져오기
+    const container = document.querySelector('.container');
+    const flexDirectionSelect = document.getElementById('flex-direction');
+    const justifyContentSelect = document.getElementById('justify-content');
+    const alignItemsSelect = document.getElementById('align-items');
+
+    // Flex 속성 변경 함수
+    function updateFlexContainer() {
+      const flexDirection = flexDirectionSelect.value;
+      const justifyContent = justifyContentSelect.value;
+      const alignItems = alignItemsSelect.value;
+
+      container.style.flexDirection = flexDirection;
+      container.style.justifyContent = justifyContent;
+      container.style.alignItems = alignItems;
+    }
+
+    // 이벤트 리스너 등록
+    flexDirectionSelect.addEventListener('change', updateFlexContainer);
+    justifyContentSelect.addEventListener('change', updateFlexContainer);
+    alignItemsSelect.addEventListener('change', updateFlexContainer);
+
+    // 초기 설정
+    updateFlexContainer();
+  </script>
+</body>
+
+</html>
