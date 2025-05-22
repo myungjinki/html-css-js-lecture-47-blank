@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력요소 감지</title>
+    <script>
+      function myfunc(params) {
+        const text = document.querySelector('#text');
+        const content = document.querySelector('#content');
+
+        if (text.value.length >= 10) {
+          content.innerHTML = '10글자이상임';
+        } else {
+          content.innerHTML = text.value.length;
+        }
+      }
+
+
+    </script>
+  </head>
+
+  <body>
+    <input type="text" name="" id="text" onkeydown="myfunc()">
+    <span id="content"></span>
+  </body>
+
+</html>

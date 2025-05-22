@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Object Model</title>
+    <script>
+      /*
+        BOM : Browser Object Model
+        - BOM은 브라우저와 관련된 객체 모델을 의미하며,
+          브라우저 환경을 제어하거나 정보를 얻을 수 있는 다양한 객체를 포함함.
+        	
+        - 주요 BOM 객체:
+          1. window: 브라우저 창을 제어하는 최상위 객체
+          2. screen: 화면 크기 및 해상도 관련 정보를 제공하는 객체
+          3. location: 현재 문서의 URL 정보와 이동 관련 기능을 제공하는 객체
+          4. navigator: 브라우저 및 사용자 정보 제공 객체
+          5. alert/confirm/prompt: 사용자 인터페이스 관련 메서드
+          6. history: 브라우저의 방문 기록을 제어하는 객체
+          7. document: DOM(Document Object Model)과 연동하는 객체
+      */
+
+      // 1. window 객체 관련 함수 정의
+      function closeWindow() {
+        // window.close(): 현재 브라우저 창을 닫음.
+        // 대부분의 브라우저에서는 보안상 스크립트를 통해 열리지 않은 창은 닫을 수 없음.
+        window.close();
+      }
+
+      function openWindow() {
+        // window.open(): 새로운 브라우저 창이나 탭을 엶.
+        // window.open(url, target, features, replace);
+        // 아래는 새로운 창의 위치와 크기를 지정하여 네이버 페이지를 엶.
+
+        // 화면의 넓이와 높이를 각각 절반으로 계산
+        let w = screen.width / 2; // 새 창의 너비
+        let h = screen.height / 2; // 새 창의 높이
+        let t = screen.height / 4; // 새 창의 상단 위치 (화면 4분의 1 지점)
+        let l = screen.width / 4; // 새 창의 왼쪽 위치 (화면 4분의 1 지점)
+
+        // 새로운 창을 열고 설정한 속성 적용
+        let win = window.open(
+          'https://www.naver.com', // 열고자 하는 URL
+          '_blank', // 새 창을 엶
+          `top=${t},left=${l},width=${w},height=${h}` // 위치와 크기 설정
+        );
+      }
+
+      // 2. screen 객체 관련 함수 정의
+      function screenInfo() {
+        // screen 객체를 사용하여 화면의 너비와 높이를 가져옴
+        let x = screen.width; // 화면 너비 (픽셀 단위)
+        let y = screen.height; // 화면 높이 (픽셀 단위)
+        // 화면 정보를 경고창으로 출력
+        alert(`${x} * ${y}`); // ex: "1920 * 1080"
+      }
+
+      // 3. location 객체 관련 함수 정의
+      function locationHref() {
+        // location.href: 현재 페이지의 URL을 가져오거나 변경할 수 있음
+        // 아래 코드는 페이지를 구글로 이동시킴
+        window.location.href = 'https://www.google.com';
+      }
+
+      // 4. navigator 객체 관련 함수 정의
+      function navigatorInfo() {
+        // navigator.userAgent: 현재 사용 중인 브라우저 및 운영 체제 정보를 문자열로 반환
+        alert(navigator.userAgent);
+      }
+
+      // 5. alert 관련 함수 정의
+      function alertWindow() {
+        // alert(): 간단한 메시지를 경고창으로 표시
+        alert('경고창 확인');
+      }
+
+      function confirmWindow() {
+        // confirm(): 확인/취소 버튼이 있는 확인창 표시
+        let result = confirm('정말 삭제하시겠습니까?'); // 확인 시 true, 취소 시 false 반환
+        alert(result); // 반환된 값을 경고창으로 출력
+      }
+
+      // 6. history 객체 관련 함수 정의
+      function goFoward() {
+        // history.forward(): 브라우저의 앞으로 이동
+        history.forward();
+      }
+
+      function goBack() {
+        // history.back(): 브라우저의 뒤로 이동
+        history.back();
+      }
+
+      // 7. 시간 출력 관련 함수 정의
+      function output1() {
+        // 현재 날짜와 시간을 출력하는 함수
+        let d = new Date(); // Date 객체 생성 (현재 시간 정보)
+        let str = ''; // 출력 문자열 초기화
+
+        // 날짜 관련 정보 가져오기
+        let year = d.getFullYear(); // 연도
+        let month = d.getMonth() + 1; // 월 (0부터 시작하므로 1을 더함)
+        let date = d.getDate(); // 날짜
+
+        // 요일 정보 가져오기
+        let arr = ['일', '월', '화', '수', '목', '금', '토']; // 요일 배열
+        let day = arr[d.getDay()]; // 현재 요일 (0: 일요일 ~ 6: 토요일)
+
+        // 시간 관련 정보 가져오기
+        let hour = d.getHours(); // 시
+        let min = d.getMinutes(); // 분
+        let sec = d.getSeconds(); // 초
+
+        // 문자열 구성
+        str += `${year}년 ${month}월 ${date}일 `; // ex: "2024년 12월 18일"
+        str += `${day} 요일 / `; // ex: "수요일"
+        str += `${hour}시 ${min}분 ${sec}초`; // ex: "14시 30분 25초"
+
+        // div 요소에 출력
+        let div = document.querySelector('#time');
+        div.innerHTML = str; // HTML에 시간 정보를 삽입
+      }
+
+      function output2() {
+        // setTimeout(): 지정한 시간 후에 콜백 함수를 실행
+        setTimeout(() => {
+          let d = new Date(); // 현재 시간 생성
+          alert(d.toLocaleString()); // 지역화된 날짜/시간 문자열을 경고창으로 출력
+        }, 3000); // 3초(3000ms) 후 실행
+      }
+
+      function output3() {
+        // 현재 시간을 초 단위로 실시간 업데이트
+        let d = new Date();
+        let hour = d.getHours();
+        let min = d.getMinutes();
+        let sec = d.getSeconds();
+        let str = ''; // 시간 형식 문자열 초기화
+
+        // 시간 형식화 (10보다 작을 경우 앞에 0 추가)
+        str += `${hour < 10 ? `0${hour}` : hour}`;
+        str += ` : ${min < 10 ? `0${min}` : min}`;
+        str += ` : ${sec < 10 ? `0${sec}` : sec}`;
+
+        // div 요소에 실시간 시간 표시
+        let div = document.querySelector('#time2');
+        div.innerHTML = str;
+      }
+
+      let timer; // 타이머 ID를 저장할 변수
+
+      function timeStart() {
+        // setInterval(): 지정한 시간 간격마다 콜백 함수를 반복 실행
+        timer = setInterval(output3, 1000); // 1초마다 output3 호출
+      }
+
+      function timeStop() {
+        // clearInterval(): setInterval로 실행 중인 타이머 중지
+        clearInterval(timer);
+      }
+    </script>
+  </head>
+
+  <body>
+    <h2>Javascript Window</h2>
+
+    <!-- 다양한 BOM 관련 기능을 테스트할 수 있는 버튼 -->
+    <input type="button" onclick="closeWindow()" value="창 닫기">
+    <input type="button" onclick="openWindow()" value="창 열기">
+    <input type="button" onclick="screenInfo()" value="화면 정보">
+    <input type="button" onclick="locationHref()" value="주소 이동">
+    <input type="button" onclick="navigatorInfo()" value="브라우저 정보">
+    <input type="button" onclick="alertWindow()" value="경고창">
+    <input type="button" onclick="confirmWindow()" value="확인창">
+    <input type="button" onclick="goFoward()" value="앞으로">
+    <input type="button" onclick="goBack()" value="뒤로">
+
+    <hr>
+
+    <!-- 시간 출력 관련 버튼 -->
+    <input type="button" onclick="output1()" value="시간출력(즉시한번)">
+    <input type="button" onclick="output2()" value="시간출력(잠시 후 한번)">
+    <input type="button" onclick="timeStart()" value="시간출력(계속)">
+    <input type="button" onclick="timeStop()" value="시간정지">
+    <!-- 시간 정보를 출력할 영역 -->
+    <div id="time"></div>
+    <div id="time2"></div>
+  </body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경색 바꾸기</title>
+    <script>
+      window.onload = function () {
+        const btn = document.querySelector('#btn');
+        const colorList = [
+          'lightpink',
+          'lightblue',
+          'lightgreen',
+          'lightgray',
+        ];
+        const bodyTag = document.querySelectorAll('body')[0];
+
+        console.log(btn);
+        console.log(bodyTag.style.backgroundColor);
+        let i = 0;
+        btn.addEventListener('click', () => {
+          if (i >= colorList.length) {
+            i = 0;
+          }
+          bodyTag.style.backgroundColor = colorList[i];
+          i++;
+        });
+      };
+    </script>
+  </head>
+
+  <body>
+    <button id="btn">배경색 변경</button>
+  </body>
+
+</html>
