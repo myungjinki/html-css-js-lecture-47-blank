@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM이벤트</title>
+    <script>
+      /*
+        이벤트란?
+          DOM의 일부. 사용자와 웹 페이지 사이의 상호작용을 다룰 수 있도록 만들어진 기능
+          상태변화나 행동을 나타내는 신호
+          이벤트가 감지되면 브라우저가 콜백함수를 실행하도록 함.
+          이벤트 종류 : https://www.w3schools.com/jsref/dom_obj_event.asp
+  
+          이벤트 핸들러 추가하기
+          1. HTML 인라인 이벤트 핸들러
+            : 빠르지만 유지보수 어려움
+          2. DOM요소의 프로퍼티에 이벤트 핸들러 할당
+            : 하나의 핸들러만 설정 가능.
+          3. addEventListener 메서드를 사용하는 방식
+            : 가장많이사용 표준
+      */
+
+
+      function changeRed(params) {
+        console.log('changeRed() 실행');
+        document.getElementById('mouse').style.color = 'red';
+      }
+      function changeBlue(params) {
+        console.log('changeBlue() 실행');
+        document.getElementById('mouse').style.color = 'blue'
+      }
+
+      // focus, focusout, change, keyup, submit
+    </script>
+  </head>
+
+  <body>
+    <div id="mouse" onmouseover="changeRed()" onmouseout="changeBlue()" style="font-size: x-large;">마우스를 올려보세요</div>
+    <!-- 2. DOM요소의 프로퍼티에 이벤트 핸들러 할당 -->
+    <button id="myButton">myButton</button>
+    <script>
+      const myButton = document.getElementById('myButton');
+      myButton.onclick = function () {
+        alert('버튼이 클릭되었습니다!');
+      };
+    </script>
+    <!-- 3. addEventListener메서드를 사용 -->
+    <button id="myButton2">myButton2</button>
+    <script>
+      const myButton2 = document.getElementById('myButton2');
+      myButton2.addEventListener('click', () => {
+        alert('이벤트 리스너 사용!');
+      });
+    </script>
+    <!-- 이벤트 리스너의 제거 : removeEventListener-->
+    <!-- 정확히 동일한 함수를 전달해야 이벤트가 제거된다! -->
+    <button id="myButton3">myButton3</button>
+    <script>
+      const myButton3 = document.getElementById('myButton3');
+      const handleClick = () => {
+        alert('이벤트 리스너 사용!222 이벤트 제거 전');
+      };
+      myButton3.addEventListener('click', handleClick);
+      // 
+    </script>
+    <button id="removeButton">removeButton</button>
+    <script>
+      const removeButton = document.getElementById('removeButton');
+      const removedMessage = () => {
+        alert('button3이벤트 삭제됨');
+        myButton3.removeEventListener('click', handleClick);
+      };
+      removeButton.addEventListener('click', removedMessage);
+    </script>
+
+
+  </body>
+
+</html>

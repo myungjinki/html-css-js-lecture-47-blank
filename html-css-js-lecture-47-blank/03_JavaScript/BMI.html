@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI</title>
+    <script>
+      const name = prompt('이름을 입력하세요');
+      const height = Number.parseFloat(prompt('키를 입력하세요(cm)'));
+      const weight = Number.parseFloat(prompt('몸무게를 입력하세요(kg)'));
+
+      if (
+        Number.isNaN(height) ||
+        Number.isNaN(weight) ||
+        height <= 0 ||
+        weight <= 0
+      ) {
+        alert('유효한 숫자를 입력하세요.');
+      } else {
+        // kg / (m^2)
+        const bmi = weight / (height / 100) ** 2;
+
+        let category = '';
+
+        switch (true) {
+          case bmi < 18.5:
+            category = '저체중';
+            break;
+          case 18.5 <= bmi && bmi < 23:
+            category = '정상';
+            break;
+          case 23 <= bmi && bmi < 25:
+            category = '과체중';
+            break;
+          case bmi > 25:
+            category = '비만';
+            break;
+          default:
+            category = '잘못된 입력입니다.';
+            break;
+        }
+        console.log(`${name}님의 BMI는 ${bmi.toFixed(2)}, ${category}입니다`);
+      }
+
+      // 명시적형변환을 통해 입력치의 안정성확보
+      // 소숫점 두번째 자리까지만 나오도록 계산하기
+      // 입력값 유효성 검사 (숫자인지 확인하기, 0이상의 숫자인지 확인하기)
+      // 조건문으로 분류까지 출력하기(저체중<18.5<정상<23<과체중<25<비만)
+    </script>
+  </head>
+
+  <body></body>
+</html>

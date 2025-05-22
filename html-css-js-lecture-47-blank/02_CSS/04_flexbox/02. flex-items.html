@@ -73,8 +73,22 @@
       <div>4</div>
     </div>
     <hr>
+    <h3>flex아이템에 적용할 수 있는 단축 속성</h3>
+    <!-- flex : <flex-grow><flex-shrink><flex-basis> -->
+    <p>단축속성 작성 시 숫자 값 하나만 부여하면 grow를 설정하고 나머지 두 값은 기본값
+    </p>
+    <hr>
     <h3>align-self 속성</h3>
-    <p>형제요소와의 배치를 정렬</p>
+    <p>형제요소와의 배치를 정렬<br>
+      <!-- align-self : auto(default) | stretch | center | flex-start | flex-end -->
+      부모인 플렉스 컨테이너의 align-items 속성을 상속
+    </p>
+    <div class="flex-container" style="height: 200px; align-items: flex-end;">
+      <div>1</div>
+      <div>2</div>
+      <div style="align-self: flex-start;">3</div>
+      <div>4</div>
+    </div>
   </body>
 
 </html>

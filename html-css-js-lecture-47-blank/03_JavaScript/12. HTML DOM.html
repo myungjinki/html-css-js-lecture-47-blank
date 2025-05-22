@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <script>
+      /*
+        DOM (Document Object Model) : 문서 객체 모델
+  
+        HTML 엘리먼트 찾기
+        - id로 찾기
+          document.getElementById(id)
+        - 태그이름으로 찾기
+          document.getElementsByTagName(name)
+        - 클래스 이름으로 찾기
+          document.getElementsByClassName(name)
+        - 선택자로 단일 엘리먼트 찾기
+          document.querySelector(선택자)
+        - 선택자로 복수 엘리먼트 찾기
+          document.querySelectorAll(선택자)
+  
+        찾을 수 있는 지 확인하기 (선택자를 통해)
+          특정element.matches(선택자); // 불리언값을 반환함..
+      */
+      // 렌더링순서에 의해 스크립트 실행이 방해되지 않도록 하기..
+      /*
+        1. script태그에 defer속성 추가
+          자바스크립트 파일의 로드가 비동기적으로 동시에 진행되도록 하는 방법
+          스크립트의 실행 자체가 DOM이 완전히 로드된 후 실행된다.
+          외부 스크립트일때만 적용되며,
+          내부 스크립트를 사용하는 script태그에 적용시에는 무시됨
+        2. DOMContentLoaded이벤트 사용
+          document.addEventListener('DOMContentLoaded', function () {
+          
+          });
+          HTML이 완전히 로드되고 파싱된 후 실행된다
+        3. window.onload 이벤트 사용
+          window.onload = function(){
+  
+          };
+          페이지의 모든 리소스가 로드된 후 실행된다.
+  
+      */
+      /*
+        HTML 엘리먼트 변경
+        - 가져온element.innerHTML = HTML컨텐츠;
+          : 엘리먼트의 HTML내용 변경
+        - 가져온element.textContent = 텍스트;
+          : 엘리먼트의 HTML요소의 컨텐츠로 텍스트 삽입
+        - 가져온element.속성 = 변경할 속성 값;
+          : 엘리먼트의 속성 값 변경
+        - 가져온element.style.css속성이름 = 변경할 스타일 값;
+          : 엘리먼트의 스타일 변경
+      */
+      window.onload = function () {
+        const demo = document.getElementById('demo');
+        demo.innerText = 'Hello World';
+        console.log(demo);
+        console.log(document.getElementsByClassName('demo'));
+        const inputEle = document.getElementsByTagName('input');
+        console.log(inputEle);
+        inputEle[0].value = '김길동';
+        console.log(document.querySelector('#demo'));
+        const thirdEle = document.querySelectorAll('.demo')[1];
+        console.log(thirdEle);
+        thirdEle.innerHTML = '<hr>';
+
+        const button = document.createElement('button');
+        button.innerHTML = '전송하기';
+        document.body.appendChild(button);
+
+        demo.style.color = 'red';
+
+        console.log(thirdEle.matches('.demo'));
+        const demo1 = document.getElementById('demo1');
+        console.log(demo1.matches('.demo1>#demo1'));
+        console.log(demo1.matches('.demo1>#demo2'));
+      };
+    </script>
+  </head>
+
+  <body>
+    <p class="" id="demo">안녕하세요1</p>
+    <p class="demo" id="">안녕하세요2</p>
+    <p class="demo" id="">안녕하세요3</p>
+    <p class="demo" id="">안녕하세요4</p>
+    <div class="demo1">
+      <div id="demo1">matches메서드 확인하기</div>
+    </div>
+    <input type="text" name="name" id="name" value="홍길동">
+  </body>
+
+</html>

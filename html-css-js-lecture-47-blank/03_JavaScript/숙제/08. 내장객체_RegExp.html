@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식</title>
+    <script>
+      // RegExp 객체
+      // 정규식을 표현하는 리터럴을 통해 인스턴스를 생성함.
+      // 정규식을 담은 변수에서 변수에서 점 연산자를 통해 메서드를 호출할 수 있다.
+      // 정규식을 쓰는 방법도 찾아 주석으로 정리해 보세요.
+
+      // 문자열이 정규식 패턴과 일치하는지 여부를 논리형으로 반환하는
+      // 정규식.test(문자열)
+      const regex = /hello/;
+      console.log(regex.test("hello world")); // true
+      console.log(regex.test("hi world"));    // false
+
+
+      // 정규식과 일치하는 결과(첫 번째 일치)를 배열로 반환하고 없으면 null로 반환하는
+      // 정규식.exec('대상문자열')
+      const regex2 = /[a-z]+/;
+      console.log(regex2.exec("123abc456"));
+      // ["abc", index: 3, input: "123abc456", groups: undefined]
+
+
+      // 문자열에서 정규식과 일치하는 전체 결과를 배열로 반환하는
+      // 대상문자열.match(정규식)
+      const str1 = "cat, bat, mat";
+      console.log(str1.match(/.at/g));
+      // ["cat", "bat", "mat"]
+
+
+      // 정규식과 일치하는 부분을 찾아 다른 문자열로 교체하는
+      // 기존문자열.replace(정규식, 교체할문자열)
+      const str2 = "I love JavaScript!";
+      console.log(str2.replace(/JavaScript/, "Java"));
+      // "I love Java!"
+
+
+      // 정규식과 일치하는 첫 번재 위치(인덱스)를 반환하는
+      // 정규식.search(정규식)
+      const str3 = "Where is the keyword?";
+      console.log(str3.search(/key/));
+      // 12
+
+
+      // 정규식을 기준으로 문자열을 분할하여 배열로 반환하는
+      // 문자열.split(정규식)
+      const str4 = "apple,banana,grape";
+      console.log(str4.split(/,/));
+      // ["apple", "banana", "grape"]
+
+
+    </script>
+  </head>
+
+  <body>
+
+  </body>
+
+</html>

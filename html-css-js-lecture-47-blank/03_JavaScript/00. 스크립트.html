@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <script>
+    // 스크립트의 실행을 지연시키는 방법 1
+    document.addEventListener('DOMContentLoaded', function () {
+      console.log('이 콘솔문은 DOM객체의 파싱이 끝난 뒤 실행됩니다.');
+      /*
+        document객체는 DOM의 최상위 객체로 HTML문서를 자바스크립트로 제어할 수 있게 해 준다!
+        DOM은 브라우저가 제공하는 Web API로 비 브라우저 환경에는 존재하지 않는다!
+      */
+    });
+    console.log('head영역 이전에도 쓸 수 있다.');
+  </script>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script defer>
+
+      // 단일행 주석
+      // ctrl + /
+      /*
+        다행주석을 쓸 수는 있지만 기본단축키로는 안됨.
+      */
+      /**
+       * 이렇게 생긴 주석도 됨
+       * 도큐먼트 주석 docString(문서화를 위한 특수 주석 스타일)이라고 부르며 자바스크립트는 JSDoc이라고 부름(툴 이름이자 문법 스타일).
+       * 코드의 문서화, API설명을 위해 사용. 팀 개발 시 가독성과 유지보수성 향상.
+      */
+      console.log('스크립트 영역은 HTML문서 어디에서든 선언할 수 있지만');
+    </script>
+    <!-- 스크립트의 실행을 지연시키는 방법 2 -->
+    <script src="../asset/js/aaa.js" defer>
+      // src속성이 지정된 script요소의 컨텐츠는 스크립트로서 동작하지 않는다..
+      console.log('이 콘솔문은 출력될까?');
+    </script>
+  </head>
+  <script>
+    console.log('head와 body사이에도 쓸 수 있을까?..');
+
+  </script>
+
+  <body>
+    <script>
+      console.log('body영역 안에도 쓸 수 있다..');
+      console.log('렌더링이란? HTML, CSS, JS로 작성된 문서를 브라우저에 시각적으로 출력하는 것을 의미한다.');
+    </script>
+    <p>스크립트 사이에 HTML의 요소</p>
+    <script src="../asset/js/bbb.js"></script>
+    <p>F12버튼을 눌러 개발자 도구를 열 수 있으며, console.log(); 구문으로 작성한 내용을 확인할 수 있다!
+      <script>
+        console.log('p요소 안의 콘솔문은 출력될까?');
+      </script>
+    </p>
+  </body>
+  <script>console.log('body영역 바깥에도 쓸 수 있다!');</script>
+
+</html>

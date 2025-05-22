@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>입력 글자 수 출력</p>
+    <input type="text" id="inputText" />
+    <label for="inputText"></label>
+    <script>
+      const inputText = document.getElementById('inputText');
+      const label = document.querySelector("label[for='inputText']");
+      inputText.addEventListener('input', () => {
+        label.textContent = `${inputText.value.length}글자`;
+      });
+    </script>
+  </body>
+</html>
