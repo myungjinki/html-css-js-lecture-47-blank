@@ -1,0 +1,128 @@
+/* Reset 및 기본 설정 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* HTML, Body 기본 세팅 (화면 꽉 채우기) */
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+/* Header */
+header {
+	padding: 60px;
+	background: #1abc9c;
+	color: white;
+	/* 문제 2 : 중앙 정렬 */
+}
+
+/* Navigation Bar */
+/* 문제 4-4 */
+nav {
+	background-color: #333;
+}
+
+nav a {
+	/* 문제 2 : 글자 흰색 */
+	/* 문제 2 : 밑줄 제거 */
+	padding: 14px 20px;
+	text-align: center;
+}
+
+nav a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+/* 문제 4-1 : content 중앙 정렬 */
+/* 문제 4-2 : main과 aside 배치 */
+/* 문제 4-3 : content내에서 main과 aside의 폭이 8:2의 비율로 차지하도록 하세요 */
+.content {
+	justify-content: center;
+	width: 80vw;
+}
+
+aside {
+	background-color: #f1f1f1;
+	padding: 20px;
+}
+
+main {
+	background-color: #d2d2d2;
+	padding: 20px;
+}
+
+.question-area {
+	background-color: #aaa;
+	width: 100%;
+	padding: 20px;
+}
+
+/* Footer */
+footer {
+	padding: 20px;
+	text-align: center;
+	background: #ddd;
+}
+
+/* 테이블 스타일 */
+table,
+th,
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+th {
+	background-color: beige;
+	height: 15px;
+}
+
+td {
+	height: 15px;
+}
+
+#fixedItem {
+	/* 문제 3-4, 3-5 */
+	height: auto;
+	background: transparent;
+}
+
+/* 문제 3-3 */
+.fixed img {
+	display: block;
+}
+
+.close-button {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+
+	background-color: #ff5f5f;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	font-size: 16px;
+	cursor: pointer;
+	padding: 0;
+}
+
+.close-button:hover {
+	background-color: #ff3b3b;
+}
+
+.iframe-container {
+	height: 70vh;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
